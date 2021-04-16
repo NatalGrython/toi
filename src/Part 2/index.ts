@@ -304,4 +304,3 @@ const unionContradictions = (data: Person[]) => {
     (first, second) => first.id - second.id
   );
 };
-console.log(clearContradictions(dirty));
