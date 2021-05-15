@@ -98,20 +98,32 @@ const dirtyData: DirtyType = [
     [5, null, 3, 5, 2, null, 2, 1, null, 2],
 ]
 
+console.group('Удаление')
 console.log('Удаление пропусков', deleteDirtyData(dirtyData))
 console.log('Чистые данные', clearData)
+console.groupEnd()
 
+console.group('Игнорирование пропусков')
 console.log('Игнорирование пропусков', ignoreDirtyData(dirtyData))
 console.log('Чистые данные', clearData)
+console.groupEnd()
 
+console.group('Среднее значение')
 console.log('Среднее значение', middleData(dirtyData))
 console.log('Чистые данные', clearData)
+console.groupEnd()
 
+console.group('Ноль значение')
 console.log('Ноль значение', nullValue(dirtyData))
 console.log('Чистые данные', clearData)
+console.groupEnd()
 
+console.group('Повторение')
 console.log('Повторение последнего значения', repeatLastvalue(dirtyData))
 console.log('Чистые данные', clearData)
+console.groupEnd()
 
+console.group('Линейная регрессия')
 console.log('Линейная регрессия', linearRegrestion(dirtyData))
 console.log('Чистые данные', clearData)
+console.groupEnd()

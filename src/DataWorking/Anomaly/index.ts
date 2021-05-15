@@ -180,5 +180,26 @@ const interpolationTwoMetric = (data: [number, number][]) => {
     return newData
 }
 
-console.log(deleteAnomalyValueTwoMetric(dirtyTwoMetric))
-console.log(interpolationTwoMetric(dirtyTwoMetric))
+console.group('Одномерные данные')
+console.log('Чистые данные', clearOneMetric)
+console.log(
+    'Удаление аномальных значений',
+    deleteAnomalyValueOneMetric(dirtyOneMetric)
+)
+console.log(
+    'Интерполяция примерных значений',
+    interpolationOneMetric(dirtyOneMetric)
+)
+console.groupEnd()
+
+console.group('Двумерные данные')
+console.log('Чистые данные', clearTwoMetric)
+console.log(
+    'Удаление аномальных значений',
+    deleteAnomalyValueTwoMetric(dirtyTwoMetric)
+)
+console.log(
+    'Интерполяция примерных значений',
+    interpolationTwoMetric(dirtyTwoMetric)
+)
+console.groupEnd()

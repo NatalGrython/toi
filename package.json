@@ -24,9 +24,11 @@
         "webpack-dev-server": "^3.11.2"
     },
     "scripts": {
-        "part1": "node dist/Part1/index.js",
-        "part2": "node dist/Part2/index.js",
-        "part3": "node dist/Part3/index.js"
+        "miss": "node ./dist/DataWorking/Missing/index.js",
+        "duplicat": "node ./dist/DataWorking/Duplicats/index.js",
+        "anomaly": "node ./dist/DataWorking/Anomaly/index.js",
+        "sort": "node ./dist/HandlingData/Sort/index.js",
+        "group": "node ./dist/HandlingData/Group/index.js"
     },
     "dependencies": {
         "chart.js": "^3.0.1",
