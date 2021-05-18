@@ -149,6 +149,8 @@ const peopleData: People[] = [
     },
 ]
 
+console.table(peopleData)
+
 const getAgeInterval = (data: People[], groupLength: number) => {
     const max = data.reduce((acc, item) => (acc > item.age ? acc : item.age), 0)
     const min = data.reduce(
@@ -237,6 +239,6 @@ const group = (data: People[]) => {
 
 group(peopleData).forEach((data, index) => {
     console.group(`Группа ${index + 1}`)
-    console.log(data)
+    console.table(data)
     console.groupEnd()
 })

@@ -24,11 +24,11 @@
         "webpack-dev-server": "^3.11.2"
     },
     "scripts": {
-        "miss": "node ./dist/DataWorking/Missing/index.js",
-        "duplicat": "node ./dist/DataWorking/Duplicats/index.js",
-        "anomaly": "node ./dist/DataWorking/Anomaly/index.js",
-        "sort": "node ./dist/HandlingData/Sort/index.js",
-        "group": "node ./dist/HandlingData/Group/index.js"
+        "miss": "tsc && node ./dist/DataWorking/Missing/index.js",
+        "duplicat": "tsc && node ./dist/DataWorking/Duplicats/index.js",
+        "anomaly": "tsc && node ./dist/DataWorking/Anomaly/index.js",
+        "sort": "tsc && node ./dist/HandlingData/Sort/index.js",
+        "group": "tsc && node ./dist/HandlingData/Group/index.js"
     },
     "dependencies": {
         "chart.js": "^3.0.1",

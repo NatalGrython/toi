@@ -114,6 +114,8 @@ const clear: Person[] = [
     },
 ]
 
+console.table(clear)
+
 const dirty: Person[] = [
     {
         id: 0,
@@ -222,6 +224,8 @@ const dirty: Person[] = [
     },
 ]
 
+console.table(dirty)
+
 const isEqual = (val1: Person, val2: Person) => {
     const condition =
         val1.id === val2.id &&
@@ -307,7 +311,15 @@ const unionContradictions = (data: Person[]) => {
     )
 }
 
-console.log('Удаление дубликатов', clearDuplicates(dirty))
-console.log('Сохранение уникального значения', saveUngique(dirty))
-console.log('Удаление противоречий', clearContradictions(dirty))
-console.log('Объединение противоречий', unionContradictions(dirty))
+console.group('Удаление дубликатов')
+console.table(clearDuplicates(dirty))
+console.groupEnd()
+console.group('Сохранение уникального значения')
+console.table(saveUngique(dirty))
+console.groupEnd()
+console.group('Удаление противоречий')
+console.table(clearContradictions(dirty))
+console.groupEnd()
+console.group('Объединение противоречий')
+console.table(unionContradictions(dirty))
+console.groupEnd()

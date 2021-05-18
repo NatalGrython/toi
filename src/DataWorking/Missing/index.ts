@@ -2,7 +2,7 @@ const regression = require('regression')
 
 type ClearType = number[][]
 
-type DirtyType = (number | undefined | null)[][]
+type DirtyType = (number | null)[][]
 
 const deleteDirtyData = (data: DirtyType) => {
     const arrIndex: Set<number> = new Set()
@@ -98,7 +98,20 @@ const dirtyData: DirtyType = [
     [5, null, 3, 5, 2, null, 2, 1, null, 2],
 ]
 
+const middleValue = (data: any[][]) => {
+    const sum = data.reduce(
+        (acc, item) =>
+            acc +
+            item.reduce((insideAcc, insideItem) => insideAcc + insideItem, 0),
+        0
+    )
+    console.log(sum)
+    const length = data.reduce((acc, item) => acc + item.length, 0)
+    console.log(length)
+    return sum / length
+}
 console.group('Удаление')
+
 console.log('Удаление пропусков', deleteDirtyData(dirtyData))
 console.log('Чистые данные', clearData)
 console.groupEnd()
@@ -127,3 +140,17 @@ console.group('Линейная регрессия')
 console.log('Линейная регрессия', linearRegrestion(dirtyData))
 console.log('Чистые данные', clearData)
 console.groupEnd()
+
+console.table({
+    Чистые: middleValue(clearData) - middleValue(clearData),
+    Удаление: middleValue(clearData) - middleValue(deleteDirtyData(dirtyData)),
+    Игнорирование:
+        middleValue(clearData) - middleValue(ignoreDirtyData(dirtyData)),
+    'Среднее значение':
+        middleValue(clearData) - middleValue(middleData(dirtyData)),
+    'Ноль значение': middleValue(clearData) - middleValue(nullValue(dirtyData)),
+    Повторение:
+        middleValue(clearData) - middleValue(repeatLastvalue(dirtyData)),
+    'Линейная регрессия':
+        middleValue(clearData) - middleValue(linearRegrestion(dirtyData)),
+})
