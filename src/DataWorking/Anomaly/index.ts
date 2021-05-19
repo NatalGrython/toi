@@ -2,6 +2,10 @@ const clearOneMetric: number[] = [
     10, 13, 12, 22, 26, 17, 3, 14, 4, 23, 6, 5, 9, 25, 1,
 ]
 
+const dirtyOneMetric: number[] = [
+    10, 13, 12, 65, 26, 17, 3, 123, 4, 23, 6, 55, 9, 25, 1,
+]
+
 const clearTwoMetric: number[][] = [
     [3, 2],
     [5, 1],
@@ -13,10 +17,6 @@ const clearTwoMetric: number[][] = [
     [8, 1],
     [2, 3],
     [4, 8],
-]
-
-const dirtyOneMetric: number[] = [
-    10, 13, 12, 65, 26, 17, 3, 123, 4, 23, 6, 55, 9, 25, 1,
 ]
 
 const dirtyTwoMetric: [number, number][] = [

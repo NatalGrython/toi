@@ -157,7 +157,6 @@ const getAgeInterval = (data: People[], groupLength: number) => {
         (acc, item) => (acc > item.age ? item.age : acc),
         max
     )
-
     return Math.floor((max - min) / groupLength)
 }
 
